@@ -1,21 +1,44 @@
 {
-  "name": "al-quran",
+  "name": "Quran",
   "version": "0.1.0",
+  "author": "Hasib Molla",
+  "description": "Al Quran Desktop App",
+  "build": {
+    "appId": "al.quran"
+  },
+  "homepage": "./",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.0.0",
+    "@shopify/polaris": "^5.12.0",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "autoprefixer": "^9.8.6",
+    "concurrently": "^5.3.0",
+    "electron-is-dev": "^1.2.0",
+    "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "wait-on": "^5.2.0",
     "web-vitals": "^0.2.4"
   },
+  "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "craco start",
+    "react-build": "craco build",
+    "react-test": "craco test",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "build": "npm run react-build && npm run electron-build",
+    "start": "concurrently \"BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron . \""
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +57,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron": "^11.1.1",
+    "electron-builder": "^22.9.1"
   }
 }
