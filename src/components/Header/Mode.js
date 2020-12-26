@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ButtonWithIcon from '../Buttons/ButtonWithIcon';
-import { light, moon } from '../Icons';
+import { light, moon } from '../../assets/Icons';
 
 const Mode = () => {
   const getCurrentTheme = () =>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ButtonWithIcon from '../Buttons/ButtonWithIcon';
-import { logo, setting } from '../Icons';
+import { logo, setting } from '../../assets/Icons';
 import Mode from './Mode';
 import SearchBar from './SearchBar';
 
