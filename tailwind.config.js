@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        nav: 'rgb(9,11,16)',
-        body: 'rgb(15,17,26)',
+        darkNav: 'rgb(9,11,16)',
+        darkBody: 'rgb(15,17,26)',
       },
     },
   },
