@@ -7,9 +7,11 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route exact path='/' component={Home} />
-      </Switch>
+      <div className='container mt-5 mx-auto'>
+        <Switch>
+          <Route exact path='/' component={Home} />
+        </Switch>
+      </div>
     </Router>
   );
 };

@@ -7,7 +7,7 @@ import SearchBar from './SearchBar';
 
 const Navbar = () => {
   return (
-    <div className='bg-gray-50 dark:bg-gray-900 border-b border-transparent dark:border-gray-800 transition-colors duration-500'>
+    <div className='bg-gray-50 dark:bg-nav transition-colors duration-500'>
       <div className='container px-5 sm:px-0 mx-auto'>
         <nav className='flex py-4 justify-between items-center'>
           <Link
