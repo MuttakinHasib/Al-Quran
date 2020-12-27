@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import ButtonWithIcon from '../Buttons/ButtonWithIcon';
-import { light, moon } from '../../assets/Icons';
+import { useState, useEffect } from 'react';
 
-const Mode = () => {
+const useDarkMode = () => {
   const getCurrentTheme = () =>
     window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [isDarkTheme, setIsDarkTheme] = useState(getCurrentTheme());
@@ -21,15 +19,8 @@ const Mode = () => {
       ? document.querySelector('html').classList.add('dark')
       : document.querySelector('html').classList.remove('dark');
   }, [isDarkTheme]);
-
-  return (
-    <ButtonWithIcon
-      name={isDarkTheme ? 'Light' : 'Dark'}
-      icon={isDarkTheme ? light : moon}
-      onClick={() => setIsDarkTheme(!isDarkTheme)}
-      className='mx-5'
-    />
-  );
+  console.log('hook', isDarkTheme);
+  return [isDarkTheme, setIsDarkTheme];
 };
 
-export default Mode;
+export default useDarkMode;
