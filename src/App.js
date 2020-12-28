@@ -7,11 +7,11 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <div className='container mt-5 mx-auto'>
+      {/* <div className='container mt-5 mx-auto'> */}
         <Switch>
           <Route exact path='/' component={Home} />
         </Switch>
-      </div>
+      {/* </div> */}
     </Router>
   );
 };
