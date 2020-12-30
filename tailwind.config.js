@@ -10,6 +10,12 @@ module.exports = {
         // darkBody: 'rgb(24,28,40)',
         darkBody: '#0D1117',
       },
+      gridTemplateRows: {
+        // Simple 8 row grid
+
+        38: 'repeat(38, minmax(0, 1fr))',
+        76: 'repeat(76, minmax(0, 1fr))',
+      },
     },
     fontFamily: {
       signika: ['Signika', 'sans-serif'],

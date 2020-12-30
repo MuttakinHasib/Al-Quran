@@ -1,0 +1,31 @@
+
+  .surah-name {
+    color: #180c38;
+  }
+
+  .translated-name {
+    color: #B9A2D8;
+  }
+
+  .number {
+    font-size: 18;
+    font-weight: 600;
+    color: #aaa;
+  }
+
+
+.number-icon {
+  position: relative;
+
+  .icon {
+    width: 50px;
+  }
+
+  .number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #672CBC;
+  }
+}

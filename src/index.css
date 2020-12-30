@@ -8,6 +8,13 @@
   font-style: normal;
   font-weight: 400;
 }
+@font-face {
+  src: url(./assets/fonts/surah_names.ttf);
+  font-family: surah_names;
+  font-style: normal;
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
