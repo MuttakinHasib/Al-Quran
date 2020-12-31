@@ -14,6 +14,7 @@ module.exports = {
         // Simple 8 row grid
 
         38: 'repeat(38, minmax(0, 1fr))',
+        57: 'repeat(57, minmax(0, 1fr))',
         76: 'repeat(76, minmax(0, 1fr))',
       },
     },

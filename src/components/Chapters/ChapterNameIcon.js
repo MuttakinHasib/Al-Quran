@@ -115,7 +115,7 @@ const CONTENT = {
   113: '971',
   114: '972',
 };
-export default styled.span`
+export default styled.span.attrs(({ color }) => ({ style: { color } }))`
   font-family: 'surah_names' !important;
   font-style: normal;
   font-weight: normal;
@@ -124,8 +124,8 @@ export default styled.span`
   line-height: 1;
   font-size: 40px;
   float: right;
-  ${'' /* color: ${({ theme }) => theme.colors.text}; */}
-  color: #672CBC;
+  transition: color .5s ease;
+  ${'' /* color: #672CBC; */}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &:before {

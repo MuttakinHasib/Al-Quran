@@ -4,7 +4,7 @@ const path = require('path');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
+    minWidth: 800,
     height: 600,
     // titleBarStyle: 'hidden',
     backgroundColor: '#F8F9FA',

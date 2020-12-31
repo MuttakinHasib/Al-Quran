@@ -18,7 +18,7 @@ const SearchBar = ({ isDarkTheme }) => {
       .ant-select-selector { 
         background-color: ${
           isDarkTheme ? 'rgb(20,33,46)' : '#F9FAFB'
-        } !important;
+        } !important; transition: background-color .5s cubic-bezier(0.4, 0, 0.2, 1) !important;
         border:none !important;
       }
       .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector{
@@ -27,7 +27,7 @@ const SearchBar = ({ isDarkTheme }) => {
       .ant-select-arrow {display:none !important;}
       .ant-select-selection-placeholder{color: ${
         isDarkTheme ? '#aaa' : 'rgba(17, 24, 39,.6)'
-      }!important;}
+      }!important; transition: color .5s cubic-bezier(0.4, 0, 0.2, 1) !important;}
     `,
         }}
       />
@@ -36,6 +36,7 @@ const SearchBar = ({ isDarkTheme }) => {
           showSearch
           className='font-semibold dark:text-gray-300'
           style={{ width: 200 }}
+          autoFocus
           placeholder='Select a surah'
           optionFilterProp='children'
           onChange={val => {
@@ -54,7 +55,7 @@ const SearchBar = ({ isDarkTheme }) => {
         </Select>
         <button
           type='submit'
-          class='absolute right-0 top-0 mt-2 mr-4 focus:outline-none'
+          className='absolute right-0 top-0 mt-2 mr-4 focus:outline-none'
         >
           <svg
             className='h-4 w-4 fill-current dark:text-gray-400 transition-colors duration-500'

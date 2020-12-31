@@ -1,44 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ButtonWithIcon from '../Buttons/ButtonWithIcon';
 import { light, logo, moon, setting } from '../../assets/Icons';
 import useDarkMode from '../../hooks/useDarkMode';
 import SearchBar from './SearchBar';
+import Settings from '../Settings/Settings';
 
 const Navbar = () => {
   const [isDarkTheme, setIsDarkTheme] = useDarkMode();
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className='bg-white sticky top-0 z-50 dark:bg-darkNav transition-colors duration-500'>
-      <div className='max-w-screen-xl px-5 mx-auto'>
-        <nav className='flex py-4 justify-between items-center'>
-          <Link
-            to='/'
-            className='focus:outline-none font-signika hover:text-gray-600 text-lg font-bold text-gray-500 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-500'
-          >
-            <div className='flex justify-center items-center'>
-              {logo}
-              <h3 className='ml-3 text-lg font-bold text-current'>Al Quran</h3>
+    <>
+      <div className='bg-white sticky top-0 z-50 dark:bg-darkNav transition-colors duration-500'>
+        <div className='max-w-screen-xl px-5 mx-auto'>
+          <nav className='flex py-4 justify-between items-center'>
+            <Link
+              to='/'
+              className='focus:outline-none font-signika hover:text-gray-600 text-lg font-bold text-gray-500 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-500'
+            >
+              <div className='flex justify-center items-center'>
+                {logo}
+                <h3 className='ml-3 text-lg font-bold text-current'>
+                  Al Quran
+                </h3>
+              </div>
+            </Link>
+            <div className='justify-end'>
+              <div className='flex items-center space-x-5'>
+                <SearchBar {...{ isDarkTheme }} />
+                <ButtonWithIcon
+                  name={isDarkTheme ? 'Light' : 'Dark'}
+                  icon={isDarkTheme ? light : moon}
+                  onClick={() => setIsDarkTheme(!isDarkTheme)}
+                  className='hidden sm:flex'
+                />
+                <ButtonWithIcon
+                  name='Settings'
+                  icon={setting}
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+              </div>
             </div>
-          </Link>
-          <div className='justify-end'>
-            <div className='flex items-center space-x-5'>
-              <SearchBar {...{ isDarkTheme }} />
-              <ButtonWithIcon
-                name={isDarkTheme ? 'Light' : 'Dark'}
-                icon={isDarkTheme ? light : moon}
-                onClick={() => setIsDarkTheme(!isDarkTheme)}
-                className='hidden sm:flex'
-              />
-              <ButtonWithIcon
-                name='Settings'
-                icon={setting}
-                onClick={() => alert('Settings')}
-              />
-            </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
-    </div>
+      <Settings {...{ isOpen, setIsOpen }} />
+    </>
   );
 };
 
