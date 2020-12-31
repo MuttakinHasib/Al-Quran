@@ -1,123 +1,13 @@
 import React from 'react';
+import chaptersList from '../../data/chaptersList';
 import ChaptersCard from '../Cards/ChaptersCard';
 
 const Chapters = () => {
   return (
     <div className='grid gap-10 grid-flow-row md:grid-rows-76 lg:grid-rows-38 md:grid-flow-col'>
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al Fatiha' id={1} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
-      <ChaptersCard name='Al baraka' id={8} />
-      <ChaptersCard name='Al baraka' id={9} />
-      <ChaptersCard name='Al baraka' id={2} />
-      <ChaptersCard name='Al baraka' id={3} />
-      <ChaptersCard name='Al baraka' id={4} />
-      <ChaptersCard name='Al baraka' id={5} />
-      <ChaptersCard name='Al baraka' id={6} />
-      <ChaptersCard name='Al baraka' id={7} />
+      {chaptersList.map(chapter => (
+        <ChaptersCard key={chapter.id} {...chapter} />
+      ))}
       {/* <div className='grid auto-rows-auto gap-10'>
         <ChaptersCard name='Al Fatiha' id={1} />
         <ChaptersCard name='Al Bakarah' id={2} />

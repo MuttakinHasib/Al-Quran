@@ -1,26 +1,15 @@
 import React from 'react';
 import { Select } from 'antd';
 import 'antd/dist/antd.css';
+import chaptersList from '../../data/chaptersList';
+import convertStartCase from 'lodash.startcase';
+import { useHistory } from 'react-router-dom';
 
 const { Option } = Select;
 
-function onChange(value) {
-  console.log(`selected ${value}`);
-}
-
-function onBlur() {
-  console.log('blur');
-}
-
-function onFocus() {
-  console.log('focus');
-}
-
-function onSearch(val) {
-  console.log('search:', val);
-}
 const SearchBar = ({ isDarkTheme }) => {
-  console.log('search', isDarkTheme);
+  const history = useHistory();
+  
   return (
     <>
       <style
@@ -49,17 +38,19 @@ const SearchBar = ({ isDarkTheme }) => {
           style={{ width: 200 }}
           placeholder='Select a surah'
           optionFilterProp='children'
-          onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onSearch={onSearch}
+          onChange={val => {
+            history.push(val);
+          }}
           filterOption={(input, option) =>
             option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
           }
         >
-          <Option value='jack'>Jack</Option>
-          <Option value='lucy'>Lucy</Option>
-          <Option value='tom'>Tom</Option>
+          <Option value='/'>Home</Option>
+          {chaptersList.map(({ name }, i) => (
+            <Option key={name} value={`/${i + 1}`}>
+              {convertStartCase(name)}
+            </Option>
+          ))}
         </Select>
         <button
           type='submit'

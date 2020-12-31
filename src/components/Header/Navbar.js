@@ -8,8 +8,8 @@ import SearchBar from './SearchBar';
 const Navbar = () => {
   const [isDarkTheme, setIsDarkTheme] = useDarkMode();
   return (
-    <div className='bg-white dark:bg-darkNav transition-colors duration-500'>
-      <div className='max-w-screen-xl px-4 mx-auto'>
+    <div className='bg-white sticky top-0 z-50 dark:bg-darkNav transition-colors duration-500'>
+      <div className='max-w-screen-xl px-5 mx-auto'>
         <nav className='flex py-4 justify-between items-center'>
           <Link
             to='/'

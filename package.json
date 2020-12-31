@@ -18,6 +18,7 @@
     "autoprefixer": "^9.8.6",
     "concurrently": "^5.3.0",
     "electron-is-dev": "^1.2.0",
+    "lodash.startcase": "^4.4.0",
     "node-sass": "4.14.1",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
