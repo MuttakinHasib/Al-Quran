@@ -4,7 +4,7 @@ import AyahCard from '../components/Cards/AyahCard';
 import VerseHeaderCard from '../components/Cards/VerseHeaderCard';
 import Container from '../components/Container';
 import bnTafsirMuhiuddin from '../data/bnTafsirMuhiuddin';
-import bnTafsirZohurul from '../data/bnTafsirZohurul';
+// import bnTafsirZohurul from '../data/bnTafsirZohurul';
 import chaptersList from '../data/chaptersList';
 import quranVerses from '../data/quranVerses';
 

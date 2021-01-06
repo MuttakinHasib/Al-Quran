@@ -5,7 +5,6 @@
   "description": "Al Quran Desktop App",
   "build": {
     "appId": "al.quran",
-    "target": "nsis",
     "win": {
       "icon": "build/icon.png"
     }
