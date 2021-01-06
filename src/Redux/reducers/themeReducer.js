@@ -1,7 +1,7 @@
 import { SET_THEME } from '../_actions/Types';
 
 const initial = {
-  dark: true,
+  dark: window.matchMedia('(prefers-color-scheme: dark)').matches
 };
 
 // eslint-disable-next-line

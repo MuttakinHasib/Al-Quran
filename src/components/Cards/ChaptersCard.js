@@ -1,10 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import icon from '../../assets/images/star.svg';
 import ChapterNameIcon from '../Chapters/ChapterNameIcon';
 import './ChapterCard.scss';
 const ChaptersCard = props => {
-  console.log(props);
+  const isDarkTheme = useSelector(({ theme }) => theme.dark);
   return (
     <Link
       to={`${props.id}`}
@@ -22,10 +23,13 @@ const ChaptersCard = props => {
             <h5 className='text-lg font-semibold text-gray-700 dark:text-gray-400 transition-colors duration-500'>
               {props.name}
             </h5>
-            <span className='translated-name'>{props.translated_en}</span>
+            <span className='text-indigo-400'>{props.translated_en}</span>
           </div>
         </div>
-        <ChapterNameIcon id={props.id} />
+        <ChapterNameIcon
+          id={props.id}
+          color={isDarkTheme ? '#818CF8' : '#6D28D9'}
+        />
       </div>
     </Link>
   );

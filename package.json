@@ -4,12 +4,19 @@
   "author": "Hasib Molla",
   "description": "Al Quran Desktop App",
   "build": {
-    "appId": "al.quran"
+    "appId": "al.quran",
+    "target": "nsis",
+    "win": {
+      "icon": "build/icon.png"
+    }
   },
   "homepage": "./",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
     "@craco/craco": "^6.0.0",
+    "@headlessui/react": "^0.2.0",
+    "@kunukn/react-collapse": "^2.2.9",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -39,7 +46,7 @@
     "react-build": "craco build",
     "react-test": "craco test",
     "react-eject": "react-scripts eject",
-    "electron-build": "electron-builder",
+    "electron-build": "electron-builder -mw",
     "build": "npm run react-build && npm run electron-build",
     "start": "concurrently \"BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron . \""
   },
