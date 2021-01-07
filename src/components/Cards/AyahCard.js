@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import {
   CopyOutlined,
   PlayCircleOutlined,
@@ -12,9 +12,10 @@ import ButtonWithIcon from '../Buttons/ButtonWithIcon';
 
 const AyahCard = ({ ayah, tafsir, id }) => {
   const isDarkTheme = useSelector(({ theme }) => theme.dark);
+  const { arabicFontSize } = useSelector(state => state.settings);
   const [ayahNumber, setAyahNumber] = useState(null);
   const [showTafsir, setShowTafsir] = useState(false);
-  console.log(ayahNumber === id);
+
   return (
     <div className='p-10 bg-white dark:bg-transparent dark:border-gray-900 border-b-2 border-transparent my-5 rounded-sm transition-colors duration-500'>
       <div className='flex items-center space-x-2'>
@@ -24,10 +25,18 @@ const AyahCard = ({ ayah, tafsir, id }) => {
             {ayah.id}
           </p>
         </div>
-        <button className='w-10 h-10 text-2xl focus:outline-none' title='Copy'>
+        <button
+          className='w-10 h-10 text-2xl focus:outline-none'
+          title='Copy'
+          onClick={() => alert('This feature is Coming Soon!')}
+        >
           <CopyOutlined style={{ color: '#5BB5F2' }} />
         </button>
-        <button className='w-10 h-10 text-2xl focus:outline-none' title='Play'>
+        <button
+          className='w-10 h-10 text-2xl focus:outline-none'
+          title='Play'
+          onClick={() => alert('This feature is Coming Soon!')}
+        >
           <PlayCircleOutlined
             style={{ color: isDarkTheme ? '#f56' : '#f36' }}
           />
@@ -51,7 +60,10 @@ const AyahCard = ({ ayah, tafsir, id }) => {
           }}
         /> */}
       </div>
-      <h1 className='text-right word-spacing text-gray-800 dark:text-gray-300 font-noorehuda text-5xl py-5 leading-relaxed transition-colors duration-500'>
+      <h1
+        className='text-right word-spacing text-gray-800 dark:text-gray-300 font-noorehuda text-5xl py-5 leading-relaxed transition-colors duration-500'
+        style={{ fontSize: arabicFontSize + 'px' }}
+      >
         {ayah?.text}
       </h1>
       <Collapse isOpen={ayahNumber === id && showTafsir}>
@@ -61,4 +73,4 @@ const AyahCard = ({ ayah, tafsir, id }) => {
   );
 };
 
-export default memo(AyahCard);
+export default AyahCard;

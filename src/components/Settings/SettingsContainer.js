@@ -1,19 +1,22 @@
 import React from 'react';
-import {
-  Col,
-  Collapse,
-  Divider,
-  InputNumber,
-  Row,
-  Select,
-  Slider,
-  Switch,
-} from 'antd';
+import { Collapse, Divider, Select, Slider, Switch } from 'antd';
 import { ReadOutlined, FontSizeOutlined } from '@ant-design/icons';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import {
+  arabicFontHandler,
+  banglaFontHandler,
+  transitionMode,
+} from '../../Redux/_actions/settingsActions';
+
 const { Panel } = Collapse;
 const SettingsContainer = () => {
   const isDarkTheme = useSelector(({ theme }) => theme.dark);
+  const { isTransition, arabicFontSize, banglaFontSize } = useSelector(
+    state => state.settings
+  );
+  const dispatch = useDispatch();
+
   return (
     <Collapse
       ghost
@@ -26,7 +29,7 @@ const SettingsContainer = () => {
         dangerouslySetInnerHTML={{
           __html: `
       .ant-collapse-header{color: ${
-        isDarkTheme ? '#aaa' : 'rgba(17, 24, 39,.6)'
+        isDarkTheme ? '#aaa' : '#333'
       }!important; transition: color .5s ease-in-out !important;}
       .ant-select-selection-item{color: ${
         isDarkTheme ? '#aaa' : 'rgba(17, 24, 39,.6)'
@@ -34,28 +37,31 @@ const SettingsContainer = () => {
     `,
         }}
       />
-      <Panel
+      {/* <Panel
         extra={<ReadOutlined style={{ color: '#4EB862', fontSize: '25px' }} />}
         header='Reading Settings'
         key='1'
         className='site-collapse-custom-panel text-base text-gray-50 font-semibold'
       >
         <Divider volume={15} y={3}>
-          <span className='text-gray-700 dark:text-gray-300 font-semibold transition-colors duration-500'>
+          <span className='text-gray-600 dark:text-gray-300 font-semibold transition-colors duration-500'>
             Transition
           </span>
         </Divider>
         <div className='flex items-center ml-4 mb-3'>
-          <h6 className='mr-4 mb-0 text-gray-700 dark:text-gray-300 font-semibold transition-colors duration-500'>
+          <h6 className='mr-4 mb-0 text-gray-600 dark:text-gray-300 font-semibold transition-colors duration-500'>
             Translation Mode
           </h6>
-          <Switch defaultChecked={true} onChange={() => {}} />
+          <Switch
+            defaultChecked={isTransition}
+            onChange={value => dispatch(transitionMode(value))}
+          />
         </div>
         <div className='d-flex align-items-center ml-4 mb-3'>
           <Select
             placeholder='Select Language'
             initialValue='English'
-            // disabled={!isTransition}
+            disabled={!isTransition}
             // onChange={handleLanguage}
             style={{ fontSize: '15px' }}
           >
@@ -67,8 +73,8 @@ const SettingsContainer = () => {
             </Select.Option>
           </Select>
         </div>
-        <div className='ml-4 mb-3 text-gray-700 dark:text-gray-300 font-semibold transition-colors duration-500'>
-          <h6 className='my-3 text-gray-700 dark:text-gray-300 font-semibold transition-colors duration-500'>
+        <div className='ml-4 mb-3 text-gray-600 dark:text-gray-300 font-semibold transition-colors duration-500'>
+          <h6 className='my-3 text-gray-600 dark:text-gray-300 font-semibold transition-colors duration-500'>
             Select Bangla Transition
           </h6>
           <Select
@@ -88,9 +94,37 @@ const SettingsContainer = () => {
             </Select.Option>
           </Select>
         </div>
-        <Divider volume={15} y={3}>
-          <span className='text-muted'>Tafseer</span>
-        </Divider>
+      </Panel> */}
+      <Panel
+        extra={<FontSizeOutlined style={{ color: '#f56', fontSize: '25px' }} />}
+        header='Font Settings'
+        key='1'
+        className='site-collapse-custom-panel text-base text-gray-50 font-semibold'
+      >
+        <div className='px-5'>
+          <div>
+            <h3 className='text-gray-600 mb-3 dark:text-gray-300 font-semibold transition-colors duration-500'>
+              Arabic font size
+            </h3>
+            <Slider
+              min={35}
+              max={70}
+              defaultValue={arabicFontSize}
+              onChange={value => dispatch(arabicFontHandler(value))}
+            />
+          </div>
+          <div>
+            <h3 className='text-gray-600 mb-3 dark:text-gray-300 font-semibold transition-colors duration-500'>
+              Bangla font size
+            </h3>
+            <Slider
+              min={20}
+              max={60}
+              defaultValue={banglaFontSize}
+              onChange={value => dispatch(banglaFontHandler(value))}
+            />
+          </div>
+        </div>
       </Panel>
     </Collapse>
   );

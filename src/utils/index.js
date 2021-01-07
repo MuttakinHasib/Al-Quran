@@ -1,15 +1,10 @@
 // Set in localStorage
 
-export const setLocalStorage = (key, value) => {
-  if (window !== 'undefined') {
-    localStorage.setItem(key, JSON.stringify(value));
-  }
+export const setLocalStorage = (provider, data) => {
+  localStorage.setItem(`${provider}`, JSON.stringify(data));
 };
 
 // Remove from localStorage
 
-export const removeLocalStorage = key => {
-  if (window !== 'undefined') {
-    localStorage.removeItem(key);
-  }
-};
+export const getLocalStorage = provider =>
+  JSON.parse(localStorage.getItem(provider));
