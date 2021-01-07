@@ -48,8 +48,8 @@
     "react-build": "craco build",
     "react-test": "craco test",
     "react-eject": "react-scripts eject",
-    "electron-build": "electron-builder -w",
-    "build": "npm run react-build && npm run electron-build -wm -p always",
+    "electron-build": "electron-builder -wm -p always",
+    "build": "npm run react-build && npm run electron-build",
     "start": "concurrently \"BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron . \""
   },
   "repository": {
@@ -63,7 +63,7 @@
       "repo": "Al-Quran"
     }
   ],
-  "nsis":{"onClick": false},
+  "nsis":{"oneClick": false},
   "eslintConfig": {
     "extends": [
       "react-app",
