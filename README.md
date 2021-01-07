@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/MuttakinHasib/Al-Quran">
-    <img src="images/logo.png" alt="Logo" width="90" height="90">
+    <img src="images/logo.png" alt="" width="90" height="90">
   </a>
 
   <h3 align="center">Al Quran</h3>
