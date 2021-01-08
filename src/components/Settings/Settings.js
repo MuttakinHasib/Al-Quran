@@ -1,7 +1,11 @@
-import { Transition } from '@headlessui/react';
 import React from 'react';
-import SettingsContainer from './SettingsContainer';
+// import { app } from 'electron';
+// import * as electron from 'electron';
 
+import { Transition } from '@headlessui/react';
+import SettingsContainer from './SettingsContainer';
+// import { getVersion } from '../../utils';
+// console.log(electron.app.getVersion());
 const Settings = props => {
   return (
     <Transition show={props?.isOpen || false}>
@@ -67,6 +71,8 @@ const Settings = props => {
                               Hasib
                             </a>
                           </div>
+                          <h1 className='text-lg font-semibold'>Al Quran</h1>
+                          {/* <span className='font-light'>{getVersion()}</span> */}
                         </div>
                       </div>
                     </div>

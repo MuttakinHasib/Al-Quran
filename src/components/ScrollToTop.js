@@ -17,7 +17,7 @@ const ScrollToTop = () => {
 
   return scrollPosition >= 150 ? (
     <div
-      className='shadow fixed bottom-16 right-16 rounded-full z-50 w-10 h-10 flex justify-center items-center cursor-pointer'
+      className='shadow fixed bottom-16 right-16 rounded-full w-10 h-10 flex justify-center items-center cursor-pointer'
       style={{ backgroundColor: '#f36' }}
       onClick={() => window.scrollTo(0, 0)}
     >

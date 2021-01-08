@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ButtonWithIcon from '../Buttons/ButtonWithIcon';
-import { light, logo, moon, setting } from '../../assets/Icons';
+import { light, moon, setting } from '../../assets/Icons';
+import logo from '../../assets/images/logo.png';
 import useDarkMode from '../../hooks/useDarkMode';
 import SearchBar from './SearchBar';
 import Settings from '../Settings/Settings';
@@ -20,8 +21,8 @@ const Navbar = () => {
               className='focus:outline-none font-signika hover:text-gray-600 text-lg font-bold text-gray-500 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-500'
             >
               <div className='flex justify-center items-center'>
-                {logo}
-                <h3 className='ml-3 text-lg font-bold text-current'>
+                <img src={logo} alt='' className='w-10' />
+                <h3 className='ml-3 mb-0 text-lg font-bold text-current'>
                   Al Quran
                 </h3>
               </div>

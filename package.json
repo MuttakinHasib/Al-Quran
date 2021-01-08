@@ -1,6 +1,6 @@
 {
   "name": "Quran",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Al Quran Desktop App",
   "author": {
     "name": "Hasib Molla",
@@ -9,7 +9,10 @@
   "build": {
     "appId": "al.quran",
     "win": {
-      "icon": "build/icon.png"
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "icon": "build/icon.icns"
     }
   },
   "homepage": "./",
@@ -27,6 +30,8 @@
     "autoprefixer": "^9.8.6",
     "concurrently": "^5.3.0",
     "electron-is-dev": "^1.2.0",
+    "electron-log": "^4.3.1",
+    "electron-updater": "^4.3.5",
     "lodash.startcase": "^4.4.0",
     "node-sass": "4.14.1",
     "postcss": "^7.0.35",
@@ -48,13 +53,13 @@
     "react-build": "craco build",
     "react-test": "craco test",
     "react-eject": "react-scripts eject",
-    "electron-build": "electron-builder -wm -p always",
+    "electron-build": "electron-builder -p always",
     "build": "npm run react-build && npm run electron-build",
     "start": "concurrently \"BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron . \""
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/MuttakinHasib/Al-Quran.git"
+    "type": "git",
+    "url": "https://github.com/MuttakinHasib/Al-Quran.git"
   },
   "publish": [
     {
@@ -63,7 +68,9 @@
       "repo": "Al-Quran"
     }
   ],
-  "nsis":{"oneClick": false},
+  "nsis": {
+    "oneClick": false
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
