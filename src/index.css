@@ -6,6 +6,9 @@
   .word-spacing {
     word-spacing: 12px;
   }
+  .word-spacing-bn {
+    word-spacing: 5px;
+  }
 }
 @font-face {
   src: url(./assets/fonts/JuliusSansOne-Regular.ttf);

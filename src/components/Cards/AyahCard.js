@@ -10,9 +10,11 @@ import icon from '../../assets/images/star.svg';
 import Tafsir from '../Tafsir';
 import ButtonWithIcon from '../Buttons/ButtonWithIcon';
 
-const AyahCard = ({ ayah, tafsir, id }) => {
+const AyahCard = ({ ayah, transition, tafsir, id }) => {
   const isDarkTheme = useSelector(({ theme }) => theme.dark);
-  const { arabicFontSize } = useSelector(state => state.settings);
+  const { arabicFontSize, banglaFontSize } = useSelector(
+    state => state.settings
+  );
   const [ayahNumber, setAyahNumber] = useState(null);
   const [showTafsir, setShowTafsir] = useState(false);
 
@@ -66,6 +68,12 @@ const AyahCard = ({ ayah, tafsir, id }) => {
       >
         {ayah?.text}
       </h1>
+      <h3
+        className='font-solaimanLipi text-gray-800 dark:text-gray-400'
+        style={{ fontSize: banglaFontSize + 'px' }}
+      >
+        {transition?.text}
+      </h3>
       <Collapse isOpen={ayahNumber === id && showTafsir}>
         <Tafsir {...tafsir} />
       </Collapse>

@@ -4,8 +4,7 @@ import React from 'react';
 
 import { Transition } from '@headlessui/react';
 import SettingsContainer from './SettingsContainer';
-// import { getVersion } from '../../utils';
-// console.log(electron.app.getVersion());
+
 const Settings = props => {
   return (
     <Transition show={props?.isOpen || false}>
@@ -48,7 +47,7 @@ const Settings = props => {
                       >
                         <SettingsContainer />
                         <div className='pb-5'>
-                          <div className='uppercase font-semibold flex items-center justify-center text-center text-sm text-gray-600 dark:text-gray-200'>
+                          <div className='uppercase font-semibold flex items-center justify-center text-center text-sm text-gray-600 dark:text-gray-200 transition-colors duration-500'>
                             Designed & Developed with &nbsp;
                             <svg
                               xmlns='http://www.w3.org/2000/svg'
@@ -67,11 +66,14 @@ const Settings = props => {
                               href='http://facebook.com/hasibmolla28/'
                               target='_blank'
                               rel='noopener noreferrer'
+                              className='text-blue-500 hover:text-blue-700'
                             >
                               Hasib
                             </a>
                           </div>
-                          <h1 className='text-lg font-semibold'>Al Quran</h1>
+                          <h1 className='font-headTitle text-lg text-center font-bold mt-3 text-gray-600 dark:text-gray-200 transition-colors duration-500'>
+                            Al Quran
+                          </h1>
                           {/* <span className='font-light'>{getVersion()}</span> */}
                         </div>
                       </div>

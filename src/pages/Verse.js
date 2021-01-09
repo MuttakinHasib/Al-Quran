@@ -3,10 +3,10 @@ import { useLocation } from 'react-router-dom';
 import AyahCard from '../components/Cards/AyahCard';
 import VerseHeaderCard from '../components/Cards/VerseHeaderCard';
 import Container from '../components/Container';
-import bnTafsirMuhiuddin from '../data/bnTafsirMuhiuddin';
-// import bnTafsirZohurul from '../data/bnTafsirZohurul';
 import chaptersList from '../data/chaptersList';
 import quranVerses from '../data/quranVerses';
+import tafsirBayaan from '../data/tafsirBayaan';
+import taisirulQuran from '../data/taisirulQuran';
 
 const Verse = () => {
   const { pathname } = useLocation();
@@ -19,10 +19,13 @@ const Verse = () => {
     .filter(verse => verse.id === currentVerse)
     .map(verse => verse.aya);
 
-  const [tafsirs] = bnTafsirMuhiuddin
-    .filter(verse => verse.id === currentVerse)
-    .map(verse => verse.aya);
-
+  const tafsir = tafsirBayaan.filter(
+    verse => verse.sura === parseInt(currentVerse)
+  );
+  
+  const bnTaisirul = taisirulQuran.filter(
+    verse => verse.sura === parseInt(currentVerse)
+  );
   return (
     <Container>
       <div className='w-4/5 mx-auto mt-20'>
@@ -31,7 +34,8 @@ const Verse = () => {
           <AyahCard
             key={ayah.id}
             id={ayah.id}
-            tafsir={tafsirs[i]}
+            tafsir={tafsir[i]}
+            transition={bnTaisirul[i]}
             {...{ ayah }}
           />
         ))}

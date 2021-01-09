@@ -14,7 +14,7 @@ const englishFont = getLocalStorage('englishFont');
 const initial = {
   isTransition: transitionMode ? transitionMode : true,
   arabicFontSize: arabicFont ? arabicFont : 48,
-  banglaFontSize: banglaFont ? banglaFont : 25,
+  banglaFontSize: banglaFont ? banglaFont : 22,
   englishFontSize: englishFont ? englishFont : 48,
 };
 
