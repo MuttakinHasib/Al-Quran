@@ -1,27 +1,25 @@
-const { app, BrowserWindow, shell, dialog, ipcMain } = require('electron');
+const { app, BrowserWindow, shell, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const isDev = require('electron-is-dev');
 const path = require('path');
-const fs = require('fs');
+// const fs = require('fs');
 
 let mainWindow;
-let updater;
-let appUpdater = {
-  enabled: false,
-};
+// let appUpdater = {
+//   enabled: false,
+// };
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1276,
     minWidth: 800,
     height: 820,
-    // titleBarStyle: 'hidden',
+    titleBarStyle: process.platform !== 'darwin' ? 'hiddenInset' : 'none',
     backgroundColor: '#F8F9FA',
     webPreferences: {
-      // nodeIntegration: false,
       // contextIsolation: true,
       // preload: path.join(__dirname, 'preload.js'), // use a preload script
       preload: path.resolve(__dirname, './preload.js'),
-      nodeIntegration: false,
+      nodeIntegration: true,
     },
   });
   mainWindow.setMenuBarVisibility(false);
@@ -30,7 +28,6 @@ function createWindow() {
       ? 'http://localhost:3000'
       : `file://${path.join(__dirname, '../build/index.html')}`
   );
-  mainWindow.webContents.send('hi', 'ok');
 }
 
 app.whenReady().then(createWindow);
@@ -57,41 +54,10 @@ app.on('activate', () => {
   }
 });
 
-// autoUpdater.logger = require('electron-log');
-// autoUpdater.logger.transports.file.level = 'info';
-
-// autoUpdater.on('checking-for-update', () => {
-//   console.log('Checking for updates...');
-// });
-
-// autoUpdater.on('update-available', info => {
-//   console.log('Update available');
-//   console.log('version', info.version);
-//   console.log('Release date', info.releaseDate);
-// });
-
-// autoUpdater.on('update-not-available', () => {
-//   console.log('Update not available');
-// });
-
-// autoUpdater.on('download-progress', progress => {
-//   console.log(`Progress ${Math.floor(progress.percent)}`);
-// });
-
-// autoUpdater.on('update-downloaded', info => {
-//   console.log('Update downloaded');
-//   autoUpdater.quitAndInstall();
-// });
-
-// autoUpdater.on('error', error => {
-//   console.log(error);
-// });
-
 app.on('ready', () => {
   if (!isDev) {
     autoUpdater.checkForUpdates();
   }
-  sendStatusToWindow('Hello');
 });
 
 //-------------------------------------------------------------------
@@ -103,7 +69,6 @@ const log = require('electron-log');
 // configure logging
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
-log.info('App starting...');
 
 const sendStatusToWindow = text => {
   log.info(text);
@@ -119,27 +84,18 @@ autoUpdater.on('update-available', info => {
   sendStatusToWindow(
     `Update available. Version: ${info.version} Release Date: ${info.releaseDate}`
   );
-  dialog.showMessageBox(
-    {
-      type: 'info',
-      title: `Update available. Version: ${info.version}`,
-      message: `New Update Found. You can manaullay download it
+  dialog.showMessageBox({
+    type: 'info',
+    title: `Update available.`,
+    message: `New Update Found. Updating to Version: ${info.version}
         Release Date: ${info.releaseDate}
-        Changelog:
-        ${info.releaseNotes}
         `,
-      buttons: ['Download Now', 'No'],
-    },
-    buttonIndex => {
-      if (buttonIndex === 0) {
-        shell.openExternalSync(
-          'https://github.com/MuttakinHasib/Al-Quran/releases'
-        );
-      } else {
-        appUpdater.enabled = true;
-      }
-    }
-  );
+  });
+  dialog.showMessageBox({
+    type: 'warning',
+    title: `Updating to Version: ${info.version}`,
+    message: `Don't close your application while updating`,
+  });
 });
 autoUpdater.on('update-not-available', info => {
   sendStatusToWindow('Update not available.');
@@ -151,17 +107,8 @@ autoUpdater.on('download-progress', progressObj => {
   sendStatusToWindow(
     `Download speed: ${progressObj.bytesPerSecond} - Downloaded ${Math.floor(
       progressObj.percent
-    )}% (${progressObj.transferred} + '/' + ${progressObj.total} + )`
+    )}%`
   );
-  dialog.showMessageBox({
-    type: 'info',
-    title: 'Downloading new version',
-    message: `Download speed: ${
-      progressObj.bytesPerSecond / 1024
-    }KB/s - Downloaded ${Math.floor(progressObj.percent)}% (${
-      progressObj.transferred
-    } / ${progressObj.total})`,
-  });
 });
 autoUpdater.on('update-downloaded', info => {
   sendStatusToWindow('Update downloaded; will install now');

@@ -19,7 +19,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      signika: ['Signika', 'sans-serif'],
+      signika: ['Ubuntu', 'sans-serif'],
       headTitle: ['Julius Sans One', 'sans-serif'],
       noorehuda: ['noorehuda'],
       solaimanLipi: ['SolaimanLipi'],

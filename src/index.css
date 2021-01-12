@@ -10,12 +10,28 @@
     word-spacing: 5px;
   }
 }
+/* julius-sans-one-regular - latin */
 @font-face {
-  src: url(./assets/fonts/JuliusSansOne-Regular.ttf);
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Julius Sans One';
   font-style: normal;
   font-weight: 400;
+  src: local(''),
+    url('./assets/fonts/julius-sans-one-v9-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('./assets/fonts/julius-sans-one-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+/* ubuntu-regular - latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('./assets/fonts/ubuntu-v15-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('./assets/fonts/ubuntu-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 @font-face {
   src: url(./assets/fonts/surah_names.ttf);
   font-family: surah_names;
@@ -34,7 +50,6 @@
   font-style: normal;
   font-weight: 400;
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -55,4 +70,17 @@ code {
 }
 .collapse-css-transition {
   transition: height 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ayah-number {
+  background-image: url('./assets/images/star.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  white-space: nowrap;
+  text-align: center;
+  /* width: 50px; */
+  line-height: 2.4em;
+  display: inline-block;
+  padding: 15px;
+  margin: 0 15px;
 }

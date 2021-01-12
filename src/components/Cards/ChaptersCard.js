@@ -9,7 +9,7 @@ const ChaptersCard = props => {
   return (
     <Link
       to={`${props.id}`}
-      className='block p-5 rounded-md bg-white dark:bg-gray-900 transition-colors duration-500'
+      className='block p-5 rounded-md bg-white hover:bg-indigo-50 dark:border-transparent border border-gray-50 dark:bg-gray-900 transition-colors duration-500'
     >
       <div className='flex justify-between items-center font-signika'>
         <div className='flex items-center'>

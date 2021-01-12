@@ -1,5 +1,18 @@
 import { setLocalStorage } from '../../utils';
-import { ARABIC_FONT_SIZE, BANGLA_FONT_SIZE, TRANSITION_MODE } from './Types';
+import {
+  ARABIC_FONT_SIZE,
+  BANGLA_FONT_SIZE,
+  MUSHAF_MODE,
+  TRANSITION_MODE,
+} from './Types';
+
+export const mushafMode = value => {
+  setLocalStorage('mushafMode', value);
+  return {
+    type: MUSHAF_MODE,
+    payload: value,
+  };
+};
 
 export const transitionMode = value => {
   setLocalStorage('transitionMode', value);

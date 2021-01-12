@@ -1,6 +1,7 @@
 {
   "short_name": "Al Quran",
   "name": "Al Quran",
+  "author":"Hasib Molla",
   "icons": [
     {
       "src": "favicon.ico",

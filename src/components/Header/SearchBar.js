@@ -17,7 +17,7 @@ const SearchBar = ({ isDarkTheme }) => {
           __html: `
       .ant-select-selector { 
         background-color: ${
-          isDarkTheme ? 'rgb(20,33,46)' : '#F9FAFB'
+          isDarkTheme ? 'rgb(20,33,46)' : '#eee'
         } !important; transition: background-color .5s cubic-bezier(0.4, 0, 0.2, 1) !important;
         border:none !important;
       }

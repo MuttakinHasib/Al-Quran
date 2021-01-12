@@ -8,18 +8,17 @@ import Collapse from '@kunukn/react-collapse';
 import { useSelector } from 'react-redux';
 import icon from '../../assets/images/star.svg';
 import Tafsir from '../Tafsir';
-import ButtonWithIcon from '../Buttons/ButtonWithIcon';
 
 const AyahCard = ({ ayah, transition, tafsir, id }) => {
   const isDarkTheme = useSelector(({ theme }) => theme.dark);
-  const { arabicFontSize, banglaFontSize } = useSelector(
+  const { arabicFontSize, banglaFontSize, isTransition } = useSelector(
     state => state.settings
   );
   const [ayahNumber, setAyahNumber] = useState(null);
   const [showTafsir, setShowTafsir] = useState(false);
 
   return (
-    <div className='p-10 bg-white dark:bg-transparent dark:border-gray-900 border-b-2 border-transparent my-5 rounded-sm transition-colors duration-500'>
+    <div className='p-10 dark:bg-transparent dark:border-gray-900 border-b-2 border-transparent my-5 rounded-sm transition-colors duration-500'>
       <div className='flex items-center space-x-2'>
         <div className='number-icon mr-5'>
           <img className='icon' src={icon} alt='' />
@@ -68,12 +67,14 @@ const AyahCard = ({ ayah, transition, tafsir, id }) => {
       >
         {ayah?.text}
       </h1>
-      <h3
-        className='font-solaimanLipi text-gray-800 dark:text-gray-400'
-        style={{ fontSize: banglaFontSize + 'px' }}
-      >
-        {transition?.text}
-      </h3>
+      {isTransition && (
+        <h3
+          className='font-solaimanLipi text-gray-800 dark:text-gray-400'
+          style={{ fontSize: banglaFontSize + 'px' }}
+        >
+          {transition?.text}
+        </h3>
+      )}
       <Collapse isOpen={ayahNumber === id && showTafsir}>
         <Tafsir {...tafsir} />
       </Collapse>

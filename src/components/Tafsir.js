@@ -5,8 +5,8 @@ const Tafsir = props => {
   const { banglaFontSize } = useSelector(state => state.settings);
 
   return (
-    <div className='mt-3 pt-3 border-t-2 border-gray-100'>
-      <h4 className='text-lg font-semibold font-signika text-blue-800 dark:text-blue-400'>
+    <div className='mt-3 pt-3 border-t-2 border-gray-100 dark:border-gray-800'>
+      <h4 className='text-xl font-semibold font-signika text-blue-800 dark:text-blue-400'>
         Tafsir of This Ayah:
       </h4>
       <div
