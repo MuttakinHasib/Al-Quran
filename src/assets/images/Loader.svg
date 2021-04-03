@@ -1,9 +1,1 @@
-<svg version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-        <circle fill="none" stroke="#f36" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48"/>
-        <line fill="none" stroke-linecap="round" stroke="rgb(29, 209, 161)" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="85" y2="50.5">
-          <animateTransform attributeName="transform" dur="2s" type="rotate" from="0 50 50" to="360 50 50" repeatCount="indefinite"/>
-        </line>
-        <line fill="none" stroke-linecap="round" stroke="rgba(26, 16, 83, 0.603)" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="49.5" y2="74">
-          <animateTransform attributeName="transform" dur="15s" type="rotate" from="0 50 50" to="360 50 50" repeatCount="indefinite"/>
-        </line>
-      </svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="L2" x="0" y="0" enable-background="new 0 0 100 100" version="1.1" viewBox="0 0 100 100" xml:space="preserve"><circle cx="50" cy="50" r="48" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="4"/><line x1="50" x2="85" y1="50" y2="50.5" fill="none" stroke="#1DD1A1" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"><animateTransform attributeName="transform" dur="2s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></line><line x1="50" x2="49.5" y1="50" y2="74" fill="none" stroke="rgba(26, 16, 83, 0.603)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"><animateTransform attributeName="transform" dur="15s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></line></svg>
