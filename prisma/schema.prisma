@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./Quran.db"
+}
+
+model tafsir_ahbayan {
+  id     Int    @id @default(autoincrement())
+  surah  Int
+  ayah   Int
+  text   String
+  tafsir String
+}
+
+model tafsir_fmazid {
+  id     Int    @id @default(autoincrement())
+  start  Int
+  end    Int
+  tafsir String
+}
+
+model taisirul {
+  id    Int    @id @default(autoincrement())
+  surah Int
+  ayah  Int
+  text  String
+}
+
+model verses {
+  id    Int    @id @default(autoincrement())
+  surah Int
+  ayah  Int
+  text  String
+}

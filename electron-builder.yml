@@ -1,0 +1,12 @@
+appId: al.quran.hasib
+productName: Al Quran
+copyright: Copyright © 2021 Hasib
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null

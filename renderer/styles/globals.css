@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .word-spacing {
+    word-spacing: 12px;
+  }
+  .word-spacing-bn {
+    word-spacing: 5px;
+  }
+}
+/* julius-sans-one-regular - latin */
+@font-face {
+  font-family: "Julius Sans One";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("/fonts/julius-sans-one-v9-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/julius-sans-one-v9-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* ubuntu-regular - latin */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/fonts/ubuntu-v15-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/ubuntu-v15-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  src: url("/fonts/surah_names.ttf");
+  font-family: "surah_names";
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  src: url("/fonts/noorehuda.ttf");
+  font-family: "noorehuda";
+  font-style: normal;
+  /* font-weight: 400; */
+}
+@font-face {
+  src: url("/fonts/SolaimanLipi.ttf");
+  font-family: "SolaimanLipi";
+  font-style: normal;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.collapse-css-transition {
+  transition: height 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ayah-number {
+  background-image: url("/images/star.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  white-space: nowrap;
+  text-align: center;
+  /* width: 50px; */
+  line-height: 2.4em;
+  display: inline-block;
+  padding: 15px;
+  margin: 0 15px;
+}
+
+.number {
+  font-size: 18;
+  font-weight: 600;
+}
+.number-icon {
+  position: relative;
+}
+.number-icon .icon {
+  width: 50px;
+}
+
+.number-icon .number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
