@@ -79,8 +79,13 @@ One of the best Al Quran Desktop Application for macOS, Windows... with Dark & L
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [React](https://reactjs.org/)
+* [Next.js](https://nextjs.org/)
 * [Electron](https://www.electronjs.org/)
+* [Nextron](https://github.com/saltyshiomix/nextron)
+* [Ant Design](https://ant.design/)
 * [TailwindCSS](tailwindcss.com/)
+* [Prisma](https://www.prisma.io/)
+* [Redux](https://react-redux.js.org/)
 
 
 
