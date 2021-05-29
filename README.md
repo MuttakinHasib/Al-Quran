@@ -60,7 +60,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-One of the best Al Quran Desktop Application for macOS, Windows... with Dark & Light Mode
+One of the best Al Quran Desktop applications for macOS, Windows... with Dark & Light Mode
 
 ### Light Mode : 
 
